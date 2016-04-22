@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"> 
+<head>
+	<script type = "text/javascript" src= "./hamsters.min.js"></script>
+</head>
+<body>
+<script>
+
+function test() {
+
+
+    function range (n) {
+    	var arr = Array(n);
+    	for (var i = 0; i < n; i++) {
+        	arr[i] = i;
+    	};
+    	return arr;
+	}
+
+ var params = {'array' : range(1000)};
+
+	hamsters.run(params, function() {
+
+     var arr = params.array;
+
+    arr.forEach(function(check) {
+        rtn.data.push(check);
+        
+        //console.log("test" + check)
+       console.log(check)
+      });
+
+
+  }, function(output) {
+     return output;
+
+  }, hamsters.maxThreads, true);
+
+}
+
+test()
+</script>
+</html>
